@@ -2,14 +2,10 @@
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
 // https://wokwi.com/projects/305566932847821378
-
 #define LED_PIN 2
-
 // skapa en funktion som körs på annan TASK
 // 2. Fixa en WIFI-koppling
-
 void app_main(void)
 {
     gpio_reset_pin(LED_PIN);
