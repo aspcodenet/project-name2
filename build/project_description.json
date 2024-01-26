@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "project-name2",
-    "project_version":    "79c1f1f-dirty",
+    "project_version":    "71397da-dirty",
     "project_path":       "C:/Users/stefa/project-name2",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.1",
     "build_dir":          "C:/Users/stefa/project-name2/build",
@@ -790,7 +790,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/stefa/project-name2/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/stefa/project-name2/main/main.c" ],
+            "sources": [ "C:/Users/stefa/project-name2/main/main.c", "C:/Users/stefa/project-name2/main/connect_wifi.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

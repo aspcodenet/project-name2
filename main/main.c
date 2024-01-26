@@ -74,10 +74,19 @@ void sendTask(void *pvParameter) {
 
 void app_main(void)
 {
+	esp_err_t ret = nvs_flash_init();
+    ESP_LOGI("CH", "%d ret", ret);
+	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+	{
+		ESP_ERROR_CHECK(nvs_flash_erase());
+		ret = nvs_flash_init();
+	}
+
     gpio_reset_pin(LED_PIN);
     gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
 
     connect_wifi();
+    
 
     xTaskCreate(sendTask, "sendToThingSpeak", 8192, NULL, 5, NULL);
 
