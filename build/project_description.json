@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "project-name2",
-    "project_version":    "86a14b9-dirty",
+    "project_version":    "86c347e-dirty",
     "project_path":       "C:/Users/stefa/project-name2",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.1",
     "build_dir":          "C:/Users/stefa/project-name2/build",
