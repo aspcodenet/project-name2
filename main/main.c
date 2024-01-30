@@ -26,6 +26,8 @@
 #include "nvs_flash.h"
 #include "esp_ota_ops.h"
 #include "esp_partition.h"
+
+#include "esp_crt_bundle.h"
 // https://wokwi.com/projects/305566932847821378
 #define LED_PIN 2
 // skapa en funktion som körs på annan TASK
@@ -91,6 +93,8 @@ void check_update_task(void *pvParameter) {
 		// configure the esp_http_client
 		esp_http_client_config_t config = {
         .url = buf,
+         .transport_type = HTTP_TRANSPORT_OVER_SSL,
+         .crt_bundle_attach = esp_crt_bundle_attach,
         .event_handler = _http_event_handler,
         .keep_alive_enable = true,        
         .timeout_ms = 30000,
@@ -121,6 +125,8 @@ void check_update_task(void *pvParameter) {
 							
 							esp_http_client_config_t ota_client_config = {
 								.url = file->valuestring,
+                                .transport_type = HTTP_TRANSPORT_OVER_SSL,
+                                .crt_bundle_attach = esp_crt_bundle_attach,
                                 .keep_alive_enable = true,
 							};
                             esp_https_ota_config_t ota_config = {
