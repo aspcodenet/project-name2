@@ -31,7 +31,7 @@
 // skapa en funktion som körs på annan TASK
 // 2. Fixa en WIFI-koppling
 
-#define FIRMWARE_VERSION	0.1
+#define FIRMWARE_VERSION	0.2
 #define UPDATE_JSON_URL		"https://raw.githubusercontent.com/aspcodenet/project-name2/main/bin/firmware.json"
 
 
@@ -66,7 +66,17 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
 }
 
 
+// 1. Vi har en KONSTANT = FIRMWARE_VERSION I VÅR KOD
+//2, När vi kör programmet kommer FIRMWARE_VERSION 0,1
+// 3. Forever
+//     Kolla Github https://raw.githubusercontent.com/aspcodenet/project-name2/main/bin/firmware.json
+//     Kollar i filen vad är versionen där? 
+//          0.2
+//   jag är fortfarande 0.1
+							//      Ladda ner, sparta på ny partition, sätt ny  active partition, reboot
+//          esp_err_t ret = esp_https_ota(&ota_config);
 
+// Programändring
 
 
 
