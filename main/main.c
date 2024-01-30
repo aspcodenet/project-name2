@@ -31,7 +31,7 @@
 // skapa en funktion som körs på annan TASK
 // 2. Fixa en WIFI-koppling
 
-#define FIRMWARE_VERSION	0.3
+#define FIRMWARE_VERSION	0.4
 #define UPDATE_JSON_URL		"https://raw.githubusercontent.com/aspcodenet/project-name2/main/bin/firmware.json"
 
 
@@ -173,8 +173,8 @@ void app_main(void)
 
     while(1){
         gpio_set_level(LED_PIN,1 );
-        vTaskDelay(5000 / portTICK_PERIOD_MS);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
         gpio_set_level(LED_PIN,0 );
-        vTaskDelay(5000 / portTICK_PERIOD_MS);        
+        vTaskDelay(500 / portTICK_PERIOD_MS);        
     }
 }
