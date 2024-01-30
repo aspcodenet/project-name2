@@ -1801,3 +1801,5 @@
 69738	70000	7279742766268489	C:/Users/stefa/project-name2/build/.bin_timestamp	80342a8ab5e82ce6
 70002	70106	0	esp-idf/esptool_py/CMakeFiles/app_check_size	280fc78313b575e8
 70002	70106	0	C:/Users/stefa/project-name2/build/esp-idf/esptool_py/CMakeFiles/app_check_size	280fc78313b575e8
+0	242044316	0	CMakeFiles/confserver	1c2de889d16d31dc
+0	242044316	0	C:/Users/stefa/project-name2/build/CMakeFiles/confserver	1c2de889d16d31dc

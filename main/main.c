@@ -1,15 +1,51 @@
 #include <stdio.h>
-#include "driver/gpio.h"
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include "esp_wifi.h"
+#include "esp_system.h"
+#include "nvs_flash.h"
+#include "esp_event.h"
+#include "esp_netif.h"
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/semphr.h"
+#include "freertos/queue.h"
+
+#include "lwip/sockets.h"
+#include "lwip/dns.h"
+#include "lwip/netdb.h"
+
+#include "esp_log.h"
 #include "connect_wifi.h"
 #include "esp_http_client.h"
-
+#include "esp_https_ota.h"
+#include "cJSON.h"
+#include "nvs.h"
+#include "nvs_flash.h"
+#include "esp_ota_ops.h"
+#include "esp_partition.h"
 // https://wokwi.com/projects/305566932847821378
 #define LED_PIN 2
 // skapa en funktion som körs på annan TASK
 // 2. Fixa en WIFI-koppling
 
+#define FIRMWARE_VERSION	0.7
+#define UPDATE_JSON_URL		"https://github.com/aspcodenet/project-name2/raw/main/bin/firmware.json"
+
+
+
+void updateTask(){
+    // Fråga github finns ny version?
+    // 1. fetch https:// firmware.json from Github 
+    // 2. läsa i firmware.json finns ny version?
+    // om ja 
+    // ladda ner
+    // installera på annan partition
+    // reboot
+    esp_restart();
+}
 
 // receive buffer
 char rcv_buffer[200];
